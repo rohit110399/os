@@ -51,3 +51,28 @@ void merger(){
 				m[mc]= f[ifc];
 				mc++;
 				ifc++;
+}
+			else if(f[ifc].at > s[isc].at){
+				m[mc]= s[isc];
+				mc++;
+				isc++;
+			}
+			else;
+		}
+		if(mc != (fc+sc)){
+			if(fc!=ifc){
+				while(ifc!=fc){
+					m[mc]= f[ifc];
+					mc++;
+					ifc++;
+				}
+			}
+			else if(sc!=isc){
+				while(isc!=sc){
+					m[mc]= s[isc];
+					mc++;
+					isc++;
+				}
+			}
+		}
+	}
