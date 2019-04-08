@@ -76,3 +76,21 @@ void merger(){
 			}
 		}
 	}
+else if(fc==0){
+		while(isc!=sc){
+			m[mc]= s[isc];
+			mc++;
+			isc++;
+		}
+	}
+	else if(sc==0){
+		while(ifc!=fc){
+			m[mc]= f[ifc];
+			mc++;
+			ifc++;
+		}
+	}
+	else {
+		printf("\n No valid Jobs available\n");
+	}
+}
