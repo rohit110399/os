@@ -110,3 +110,36 @@ void printer(){
 	printf("\nAverage query time: %lf", avg);
 	printf("\nProcess Execution Complete");
 }
+void input(){
+	int map,  i, t;
+	printf("Enter total no of queries: "); scanf("%d", &n);
+	if(n==0) { printf("\n No queries\n"); }
+	else{
+		printf("\nEnter Quanta for each Process: "); scanf("%d", &quanta);
+		printf("\nEnter 1 for faculty and 2 for student\n");
+		for(i=0; i<n; i++){
+			printf("\nJob Type (1/2): "); scanf("%d", &map);
+			if(map==1){
+				printf("Query Id: "); scanf("%d", &f[fc].pid);
+				printf("Arrival Time: "); scanf("%d", &t);
+				if(t<1000 || t>1200){
+					printf("\nEnter Correct time");
+					input();
+				}
+				else{f[fc].at= t-1000;}
+				printf("Resolving Time: "); scanf("%d", &f[fc].bt);	 f[fc].rbt= f[fc].bt; 
+				fc++;
+			} else{
+				printf("Query Id: "); scanf("%d", &s[sc].pid);
+				printf("Arrival Time: "); scanf("%d", &t); 
+				if(t<1000 || t>1200){
+					printf("\nEnter Correct time\n");
+					input();
+				}
+				else {s[sc].at= t-1000; }
+				printf("Resolving Time: "); scanf("%d", &s[sc].bt);	 s[sc].rbt= s[sc].bt;
+				sc++;
+			}
+		}
+	}
+}
