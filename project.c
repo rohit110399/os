@@ -115,7 +115,7 @@ void input(){
 	printf("Enter total no of queries: "); scanf("%d", &n);
 	if(n==0) { printf("\n No queries\n"); }
 	else{
-		printf("\nEnter Quanta for each Process: "); scanf("%d", &quanta);
+		printf("\nEnter Time quantum  for each Process: "); scanf("%d", &quanta);
 		printf("\nEnter 1 for faculty and 2 for student\n");
 		for(i=0; i<n; i++){
 			printf("\nJob Type (1/2): "); scanf("%d", &map);
@@ -142,4 +142,19 @@ void input(){
 			}
 		}
 	}
+}
+void inst(){
+	printf("\nWelcome,Follow these instruction for proper functioning of the program"
+			"\n               ****Enter time in 2400 hours format. example for 10:30 am enter 1030****"
+			"\n        ****Enter Query arrival times in ascending order, i.e., in real time arrival manner****\n"
+			"\nAll Time units are in minutes. \n\n"
+			);
+}
+
+ main(){
+ 	inst();
+	input();
+	merger();
+	roundRobin();
+	printer();
 }
