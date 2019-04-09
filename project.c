@@ -94,3 +94,19 @@ else if(fc==0){
 		printf("\n No valid Jobs available\n");
 	}
 }
+void printer(){
+	int i=0, total=0, sum=0; 
+	double avg;
+	printf("\nSummary for the Execution\n");
+	printf("\nQuery ID\tArrival Time\tRessolving Time\tCompletion Time\tTurn Around Time\tWaiting Time");
+	for(i; i<mc; i++){
+		printf("\n%d\t\t%d\t\t%d\t\t%d\t\t%d\t\t\t%d",
+		m[i].pid, (m[i].at+1000), m[i].bt, (m[i].cmpt+1000), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+		total= m[i].cmpt;
+		sum+= (m[i].cmpt-m[i].at);
+	}
+	avg = sum/mc;
+	printf("\n\nTotal time Spent for all queries: %d", total);
+	printf("\nAverage query time: %lf", avg);
+	printf("\nProcess Execution Complete");
+}
